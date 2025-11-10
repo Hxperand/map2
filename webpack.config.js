@@ -24,10 +24,9 @@ module.exports = {
         changeOrigin: true,
         secure: true,
         pathRewrite: { "^/api": "" }, // /api/login -> https://story-api.dicoding.dev/login
-        headers: {
-        }
-      }
-    }
+        headers: {},
+      },
+    },
   },
 
   module: {
@@ -44,8 +43,8 @@ module.exports = {
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/i,
         type: "asset/resource",
-      }
-    ]
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -56,13 +55,15 @@ module.exports = {
       patterns: [
         { from: "service-worker.js", to: "" },
         { from: "offline.html", to: "" },
-      ]
-    })
+        { from: "manifest.json", to: "" },
+        { from: "src/image", to: "image" },
+      ],
+    }),
   ],
   resolve: {
     extensions: [".js"],
   },
   optimization: {
     splitChunks: { chunks: "all" },
-  }
+  },
 };

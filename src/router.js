@@ -4,7 +4,7 @@ import AddStory from "./views/addStory";
 import Header from "./components/header";
 import Login from "./views/login";
 import Register from "./views/register";
-
+import { Favorites } from "./views/saveStory";
 
 const routes = {
   "/": Home,
@@ -12,6 +12,7 @@ const routes = {
   "/add": AddStory,
   "/login": Login,
   "/register": Register,
+  "/favorites": Favorites,
 };
 
 const appHeader = document.getElementById("app-header");
